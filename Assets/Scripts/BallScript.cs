@@ -6,6 +6,7 @@ public class BallScript : MonoBehaviour {
 
     private Rigidbody rb;
     private Observer[] observers;
+    private Vector3 posInicial;
 
     public BallState ballState;
 
@@ -20,6 +21,7 @@ public class BallScript : MonoBehaviour {
 */
 	void Start () {
         rb = GetComponent<Rigidbody>();
+	    posInicial = transform.position;
         observers = new Observer[10];
         observers[0] = new Achievements();
         for(int i = 1; i < 10; ++i)
@@ -39,7 +41,7 @@ public class BallScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
             rb.AddForce(new Vector3(0, 10, 0) * 10);
 
-        float distance = Vector3.Distance(transform.position, new Vector3(0, 2.9f, 7.6f));
+        float distance = Vector3.Distance(transform.position, posInicial);
 
         handleInput();
 
