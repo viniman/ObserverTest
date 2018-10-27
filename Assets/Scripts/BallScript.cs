@@ -41,7 +41,7 @@ public class BallScript : MonoBehaviour {
 
         float distance = Vector3.Distance(transform.position, new Vector3(0, 2.9f, 7.6f));
 
-        //handleInput();
+        handleInput();
 
         
         if (distance > 20)
