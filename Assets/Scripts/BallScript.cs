@@ -7,17 +7,17 @@ public class BallScript : MonoBehaviour {
     private Rigidbody rb;
     private Observer[] observers;
 
-    private State state;
+    public BallState ballState;
 
     public float force;
 
     //proprieda de acesso
-    public State State
+  /*  public BallState BallState
     {
-    //    get() {return state;};
+    //    get() {return ballState;};
 
     }
-
+*/
 	void Start () {
         rb = GetComponent<Rigidbody>();
         observers = new Observer[10];
@@ -27,7 +27,7 @@ public class BallScript : MonoBehaviour {
             observers[i] = null;
         }
 
-        state = State.standing;
+        ballState = BallState.standingBall;
 	}
 	
 	void Update () {
@@ -41,8 +41,9 @@ public class BallScript : MonoBehaviour {
 
         float distance = Vector3.Distance(transform.position, new Vector3(0, 2.9f, 7.6f));
 
-        handleInput();
+        //handleInput();
 
+        
         if (distance > 20)
         {
             Destroy(gameObject);
@@ -67,5 +68,8 @@ public class BallScript : MonoBehaviour {
             key = KeyCode.LeftArrow;
         else
             key = KeyCode.Space;
+
+        ballState.hendleInput(this, key);
     }
+    
 }

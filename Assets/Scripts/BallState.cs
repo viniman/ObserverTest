@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class State
+public abstract class BallState
 {
-    public static StandingState standing = new StandingState;
-    public static MovingState moving = new MovingState;
+    public static StandingBallState standingBall = new StandingBallState();
+    public static MovingBallState movingBall = new MovingBallState();
     public abstract void hendleInput(BallScript ball, KeyCode key);
 }
