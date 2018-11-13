@@ -6,10 +6,8 @@
 [Bb]uild
 [Bb]uilds/
 [Ll]ibrary/
-/[Bb]uilds/
-/[Ll]ibrary/
+[Pp]ackages
 Assets/AssetStoreTools*
-/Assets/AssetStoreTools*
 *.stackdump
 
 # Unity3D generated meta files
@@ -78,6 +76,13 @@ Blender Models/
 # ============ #
 # Others #
 # ============ #
+
+# Folder Plugin Rider Unity
+Assets/Plugins
+
+# Others
+.idea/
+
 
 # Created by https://www.gitignore.io/api/unity,rider
 # Edit at https://www.gitignore.io/?templates=unity,rider
